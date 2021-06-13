@@ -26,7 +26,12 @@ if test -z "$PEER_ADDRESS"
 then
   PEER_ADDRESS={PEER_ADDRESS}
 fi
-export TOKENIZER_ENDPOINT=http://softethica.com:3007/keyChain/password
+# Whether the environment variable is not defined
+if test -z "$TOKENIZER_ENDPOINT"
+then
+  TOKENIZER_ENDPOINT={TOKENIZER_ENDPOINT}
+fi
+export TOKENIZER_ENDPOINT={TOKENIZER_ENDPOINT}
 
 # Methods
 start() {
